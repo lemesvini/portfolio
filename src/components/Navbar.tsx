@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import devinelogo from "../assets/devine-white.png";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -40,7 +41,7 @@ const Navbar = () => {
           whileTap={{ scale: 0.95 }}
         >
           <img
-            src="/public/lovable-uploads/devine-white.png"
+            src={devinelogo}
             alt="Devine Logo"
             className={`transition-all duration-500 object-contain ${
               isScrolled ? "w-20" : "w-20"

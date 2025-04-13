@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import devinelogo from "../assets/devine-white.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -15,7 +16,7 @@ const Footer = () => {
             transition={{ duration: 0.5 }}
           >
             <img
-              src="/public/lovable-uploads/devine-white.png"
+              src={devinelogo}
               alt="Devine Logo"
               className="w-40 object-contain"
             />
