@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
@@ -41,7 +40,7 @@ const Navbar = () => {
           whileTap={{ scale: 0.95 }}
         >
           <img 
-            src="/public/lovable-uploads/7f433aee-d1b3-4950-8833-ba121c335c98.png" 
+            src="/public/lovable-uploads/devinefinalwhite.png" 
             alt="Devine Logo" 
             className={`transition-all duration-500 ${isScrolled ? "h-8 w-8" : "h-10 w-10"}`}
           />
