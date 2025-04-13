@@ -85,7 +85,7 @@ const Projects = () => {
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              className="glass-card h-full flex flex-col group"
+              className="glass-card h-full flex flex-col group bg-black/40 overflow-hidden"
               variants={itemVariants}
               whileHover={{ y: -10, transition: { duration: 0.2 } }}
             >
@@ -97,11 +97,11 @@ const Projects = () => {
                 />
               </div>
 
-              <div className="p-6 flex flex-col flex-grow">
+              <div className="p-6 flex flex-col flex-grow bg-black/40">
                 <h3 className="text-xl font-bold mb-2 text-white">
                   {project.title}
                 </h3>
-                <p className="text-white/70 mb-4 flex-grow">
+                <p className="text-white/90 mb-4 flex-grow">
                   {project.description}
                 </p>
 
