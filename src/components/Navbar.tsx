@@ -7,18 +7,6 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { scrollY } = useScroll();
   
-  const navbarPosition = useTransform(
-    scrollY,
-    [0, 100],
-    ["translateX(0%)", "translateX(-50%)"]
-  );
-  
-  const navbarLeft = useTransform(
-    scrollY,
-    [0, 100],
-    ["0%", "50%"]
-  );
-  
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -34,19 +22,17 @@ const Navbar = () => {
   
   return (
     <motion.header
-      className={`fixed top-0 z-50 w-full transition-all duration-300 ${
-        isScrolled ? "py-3 glass border-b border-white/10" : "py-5"
+      className={`fixed top-0 z-50 w-full transition-all duration-500 ${
+        isScrolled ? "py-2 glass border-b border-white/10" : "py-5"
       }`}
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <motion.div 
-        className="container mx-auto px-4 md:px-6 flex items-center justify-between"
-        style={{ 
-          left: navbarLeft,
-          transform: navbarPosition
-        }}
+      <div 
+        className={`container mx-auto px-4 md:px-6 flex items-center justify-between transition-all duration-500 ${
+          isScrolled ? "max-w-3xl" : "max-w-7xl"
+        }`}
       >
         <motion.a
           href="#"
@@ -57,17 +43,17 @@ const Navbar = () => {
           <img 
             src="/public/lovable-uploads/7f433aee-d1b3-4950-8833-ba121c335c98.png" 
             alt="Devine Logo" 
-            className="h-10 w-10"
+            className={`transition-all duration-500 ${isScrolled ? "h-8 w-8" : "h-10 w-10"}`}
           />
           <img 
             src="/public/lovable-uploads/f73ef3aa-e2f4-46e7-9526-b71060400587.png"
             alt="Devine" 
-            className="h-8 hidden dark:block" 
+            className={`hidden dark:block transition-all duration-500 ${isScrolled ? "h-6" : "h-8"}`}
           />
           <img 
             src="/public/lovable-uploads/d023f1f0-131d-4421-9c62-ca137a6b0e53.png"
             alt="Devine" 
-            className="h-8 block dark:hidden" 
+            className={`block dark:hidden transition-all duration-500 ${isScrolled ? "h-6" : "h-8"}`}
           />
         </motion.a>
         
@@ -122,7 +108,7 @@ const Navbar = () => {
             )}
           </svg>
         </button>
-      </motion.div>
+      </div>
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
