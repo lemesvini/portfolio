@@ -5,12 +5,12 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { scrollY } = useScroll();
-  
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-    
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -18,7 +18,7 @@ const Navbar = () => {
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
-  
+
   return (
     <motion.header
       className={`fixed top-0 z-50 w-full transition-all duration-500 ${
@@ -28,7 +28,7 @@ const Navbar = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div 
+      <div
         className={`container mx-auto px-4 md:px-6 flex items-center justify-between transition-all duration-500 ${
           isScrolled ? "max-w-3xl" : "max-w-7xl"
         }`}
@@ -39,49 +39,57 @@ const Navbar = () => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          <img 
-            src="/public/lovable-uploads/devinefinalwhite.png" 
-            alt="Devine Logo" 
-            className={`transition-all duration-500 ${isScrolled ? "h-8 w-8" : "h-10 w-10"}`}
-          />
-          <img 
-            src="/public/lovable-uploads/f73ef3aa-e2f4-46e7-9526-b71060400587.png"
-            alt="Devine" 
-            className={`hidden dark:block transition-all duration-500 ${isScrolled ? "h-6" : "h-8"}`}
-          />
-          <img 
-            src="/public/lovable-uploads/d023f1f0-131d-4421-9c62-ca137a6b0e53.png"
-            alt="Devine" 
-            className={`block dark:hidden transition-all duration-500 ${isScrolled ? "h-6" : "h-8"}`}
+          <img
+            src="/public/lovable-uploads/devine-white.png"
+            alt="Devine Logo"
+            className={`transition-all duration-500 object-contain ${
+              isScrolled ? "w-20" : "w-20"
+            }`}
           />
         </motion.a>
-        
+
         <nav className="hidden md:flex items-center gap-6">
-          <a href="#home" className="nav-item">Home</a>
-          <a href="#about" className="nav-item">About</a>
-          <a href="#team" className="nav-item">Team</a>
-          <a href="#projects" className="nav-item">Projects</a>
+          <a href="#home" className="nav-item">
+            Home
+          </a>
+          <a href="#about" className="nav-item">
+            About
+          </a>
+          <a href="#team" className="nav-item">
+            Team
+          </a>
+          <a href="#projects" className="nav-item">
+            Projects
+          </a>
         </nav>
-        
+
         <motion.a
-          href="https://github.com/devine-org"
+          href="https://github.com/devine-studio"
           target="_blank"
           rel="noopener noreferrer"
           className="hidden md:flex items-center px-4 py-2 rounded-full glass text-sm font-medium transition-all hover:bg-white/10"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="mr-2"
+          >
             <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
             <path d="M9 18c-4.51 2-5-2-7-2"></path>
           </svg>
           GitHub
         </motion.a>
-        
-        <button 
-          className="md:hidden p-2 text-white"
-          onClick={toggleMobileMenu}
-        >
+
+        <button className="md:hidden p-2 text-white" onClick={toggleMobileMenu}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -111,25 +119,60 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <motion.div 
+        <motion.div
           className="md:hidden absolute top-full left-0 right-0 glass"
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
         >
           <div className="flex flex-col p-4 space-y-3">
-            <a href="#home" className="nav-item" onClick={() => setIsMobileMenuOpen(false)}>Home</a>
-            <a href="#about" className="nav-item" onClick={() => setIsMobileMenuOpen(false)}>About</a>
-            <a href="#team" className="nav-item" onClick={() => setIsMobileMenuOpen(false)}>Team</a>
-            <a href="#projects" className="nav-item" onClick={() => setIsMobileMenuOpen(false)}>Projects</a>
-            <a 
-              href="https://github.com/devine-org" 
-              target="_blank" 
+            <a
+              href="#home"
+              className="nav-item"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Home
+            </a>
+            <a
+              href="#about"
+              className="nav-item"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              About
+            </a>
+            <a
+              href="#team"
+              className="nav-item"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Team
+            </a>
+            <a
+              href="#projects"
+              className="nav-item"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Projects
+            </a>
+            <a
+              href="https://github.com/devine-studio"
+              target="_blank"
               rel="noopener noreferrer"
               className="flex items-center px-4 py-2 rounded-full glass text-sm font-medium transition-all hover:bg-white/10"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="mr-2"
+              >
                 <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
                 <path d="M9 18c-4.51 2-5-2-7-2"></path>
               </svg>
