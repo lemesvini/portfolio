@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
@@ -6,6 +5,8 @@ import About from "../components/About";
 import Team from "../components/Team";
 import Projects from "../components/Projects";
 import Footer from "../components/Footer";
+import Experience from "@/components/Experience";
+import Toolkit from "@/components/Toolkit";
 
 const Index = () => {
   useEffect(() => {
@@ -32,7 +33,8 @@ const Index = () => {
       <Navbar />
       <Hero />
       <About />
-      <Team />
+      <Toolkit />
+      <Experience />
       <Projects />
       <Footer />
     </div>

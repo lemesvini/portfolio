@@ -56,16 +56,16 @@ const Navbar = () => {
           <a href="#about" className="nav-item">
             About
           </a>
-          <a href="#team" className="nav-item">
+          {/* <a href="#team" className="nav-item">
             Team
-          </a>
+          </a> */}
           <a href="#projects" className="nav-item">
             Projects
           </a>
         </nav>
 
         <motion.a
-          href="https://github.com/devine-studio"
+          href="https://github.com/lemesvini"
           target="_blank"
           rel="noopener noreferrer"
           className="hidden md:flex items-center px-4 py-2 rounded-full glass text-sm font-medium transition-all hover:bg-white/10"
@@ -90,7 +90,7 @@ const Navbar = () => {
           GitHub
         </motion.a>
 
-        <button className="md:hidden p-2 text-white" onClick={toggleMobileMenu}>
+        {/* <button className="md:hidden p-2 text-white" onClick={toggleMobileMenu}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -115,7 +115,7 @@ const Navbar = () => {
               </>
             )}
           </svg>
-        </button>
+        </button> */}
       </div>
 
       {/* Mobile Menu */}
