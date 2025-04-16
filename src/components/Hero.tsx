@@ -1,6 +1,10 @@
 import { motion } from "framer-motion";
+import AsciiArt from "./AsciiArt"
+import { useState } from "react";
 
 const Hero = () => {
+  const [showAsciiArt, setShowAsciiArt] = useState(false);
+
   return (
     <section
       id="home"
@@ -97,16 +101,46 @@ const Hero = () => {
           </div>
 
           <motion.div
-            className="relative w-full h-[300px] md:h-[500px]"
+            className="relative w-full max-w-[500px] h-[400px] sm:h-[450px] md:h-[500px] bg-black/20 rounded-lg overflow-hidden border border-white/10"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            <img
-              src="/devid.svg"
-              alt="Developer illustration"
-              className="w-full h-full object-contain"
-            />
+            <div className="absolute top-0 left-0 right-0 h-8 bg-black/30 border-b border-white/10 flex items-center px-4">
+              <div className="flex space-x-2">
+                <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                <div className="w-3 h-3 rounded-full bg-green-500"></div>
+              </div>
+            </div>
+            <div className="absolute top-8 left-0 right-0 bottom-0 p-4 font-mono text-sm overflow-hidden">
+              <div className="h-full w-full">
+                <motion.div 
+                  className="flex items-center"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.8, duration: 0.3 }}
+                >
+                  <span className="text-green-500 mr-2">$</span>
+                  <motion.span 
+                    className="text-white/50 whitespace-nowrap"
+                    initial={{ width: 0 }}
+                    animate={{ width: "auto" }}
+                    transition={{ delay: 0.9, duration: 0.5 }}
+                  >
+                    cat me.txt
+                  </motion.span>
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 1, duration: 0 }}
+                  onAnimationComplete={() => setShowAsciiArt(true)}
+                >
+                  <AsciiArt shouldStart={showAsciiArt} />
+                </motion.div>
+              </div>
+            </div>
           </motion.div>
         </div>
       </div>
