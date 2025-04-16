@@ -20,7 +20,7 @@ const About = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
               >
-                <p className="text-muted-foreground">Your image will go here</p>
+                <p className="text-muted-foreground">loading...</p>
               </motion.div>
 
               {/* Content Column */}

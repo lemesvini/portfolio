@@ -109,7 +109,7 @@ const Toolkit = () => {
               whileHover={{ y: -5, transition: { duration: 0.2 } }}
             >
               <h3 className="text-xl font-bold mb-4 text-center">{category.title}</h3>
-              <ul className="space-y-3">
+              <ul className="grid grid-cols-2 gap-3">
                 {category.skills.map((skill, skillIndex) => (
                   <li key={skillIndex} className="flex items-center gap-3">
                     <div className="text-2xl">{skill.icon}</div>

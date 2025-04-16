@@ -55,7 +55,7 @@ const AsciiArt = ({ shouldStart }: AsciiArtProps) => {
     >
       <pre className="h-full w-full text-[0.13rem] md:text-[0.15rem] leading-[0.13rem] md:leading-[0.13rem] text-green-400 whitespace-pre font-mono flex items-center justify-center">
         {displayedText}
-        {!isComplete && <span className="animate-pulse text-green-400">_</span>}
+        {!isComplete && <span className="animate-pulse text-green-500">_</span>}
       </pre>
     </motion.div>
   );

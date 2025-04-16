@@ -40,13 +40,7 @@ const Navbar = () => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          <img
-            src={devinelogo}
-            alt="Devine Logo"
-            className={`transition-all duration-500 object-contain ${
-              isScrolled ? "w-20" : "w-20"
-            }`}
-          />
+          <span className="text-2xl font-bold">lemesvini</span>
         </motion.a>
 
         <nav className="hidden md:flex items-center gap-6">

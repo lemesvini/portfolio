@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FaDownload, FaBriefcase } from "react-icons/fa";
+import { FaDownload, FaBriefcase, FaInfo, FaInfoCircle } from "react-icons/fa";
 import { SiNextdotjs, SiTypescript, SiReact, SiNodedotjs } from "react-icons/si";
 
 const Experience = () => {
@@ -105,9 +105,9 @@ const Experience = () => {
         </div>
 
         <div className="mt-20 text-center">
-          <button className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-background border hover:bg-accent transition-colors">
-            <FaDownload className="w-4 h-4" />
-            <span>Download Resumé</span>
+          <button onClick={() => window.open('https://www.linkedin.com/in/vinicius-lemes-ds/', '_blank')} className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-background border hover:bg-accent transition-colors">
+            <FaInfoCircle className="w-4 h-4" />
+            <span>For more information, check my LinkedIn</span>
           </button>
         </div>
       </div>

@@ -40,9 +40,8 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              Web and mobile FullStack
-              <br />
-              <span className="developer-gradient">developer</span>
+              Web and mobile full stack{' '}
+              <span className="text-green-400">developer</span>
               <br />
             </motion.h1>
 
@@ -101,7 +100,7 @@ const Hero = () => {
           </div>
 
           <motion.div
-            className="relative w-full max-w-[500px] h-[400px] sm:h-[450px] md:h-[500px] bg-black/20 rounded-lg overflow-hidden border border-white/10"
+            className="relative w-full max-w-[500px] h-[400px] sm:h-[450px] md:h-[500px] bg-black/20 rounded-lg overflow-hidden border border-white/10 mx-auto"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
