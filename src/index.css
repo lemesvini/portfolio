@@ -57,8 +57,12 @@
 }
 
 @layer components {
+  .glass {
+    @apply backdrop-blur-lg bg-black/40 border border-white/10;
+  }
+
   .glass-card {
-    @apply backdrop-blur-lg bg-white/5 border border-white/10 rounded-2xl shadow-xl;
+    @apply glass rounded-xl shadow-lg;
   }
   
   .hero-gradient {
@@ -109,6 +113,7 @@ body {
   @apply glass rounded-xl shadow-lg;
 }
 
+/* Animation utilities */
 .floating {
   animation: floating 6s ease-in-out infinite;
 }

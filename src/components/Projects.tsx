@@ -41,9 +41,9 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="py-20 md:py-32 glass-card my-20">
+    <section id="projects" className="py-12 md:py-32 glass-card my-10 md:my-20">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 md:mb-16">
           <motion.h2
             className="text-3xl md:text-4xl font-bold mb-4 heading-gradient"
             initial={{ opacity: 0, y: 20 }}
@@ -57,7 +57,7 @@ const Projects = () => {
 
         <motion.div
           ref={projectsRef}
-          className="grid grid-cols-1 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -66,11 +66,11 @@ const Projects = () => {
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              className="glass-card h-full min-h-[400px] flex flex-col group bg-black/40 overflow-hidden"
+              className="glass-card h-full min-h-[350px] md:min-h-[400px] flex flex-col group bg-black/40 overflow-hidden rounded-xl"
               variants={itemVariants}
               whileHover={{ y: -10, transition: { duration: 0.2 } }}
             >
-              <div className="h-48 overflow-hidden rounded-t-xl p-6 bg-black/20">
+              <div className="h-40 md:h-48 overflow-hidden rounded-t-xl p-4 md:p-6 bg-black/20">
                 <img
                   src={project.image}
                   alt={project.title}
@@ -78,11 +78,11 @@ const Projects = () => {
                 />
               </div>
 
-              <div className="p-6 flex flex-col flex-grow bg-black/40">
-                <h3 className="text-xl font-bold mb-2 text-white">
+              <div className="p-4 md:p-6 flex flex-col flex-grow bg-black/40">
+                <h3 className="text-lg md:text-xl font-bold mb-2 text-white">
                   {project.title}
                 </h3>
-                <p className="text-white/90 mb-4 flex-grow">
+                <p className="text-sm md:text-base text-white/90 mb-4 flex-grow">
                   {project.description}
                 </p>
 
@@ -90,14 +90,14 @@ const Projects = () => {
                   {project.tags.map((tag, tagIndex) => (
                     <span
                       key={tagIndex}
-                      className="px-3 py-1 text-xs font-medium rounded-full bg-white/10 text-white"
+                      className="px-2 md:px-3 py-1 text-xs font-medium rounded-full bg-white/10 text-white"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
 
-                <div className="flex gap-4">
+                <div className="flex gap-3 md:gap-4">
                   <a
                     href={project.github}
                     target="_blank"
@@ -152,7 +152,7 @@ const Projects = () => {
             href="https://github.com/lemesvini?tab=repositories"
             target="_blank"
             rel="noopener noreferrer"
-            className="glass-card h-full min-h-[400px] flex flex-col group bg-black/20 overflow-hidden items-center justify-center text-white/60 hover:text-white/90 transition-colors border-2 border-dotted border-white/20 hover:border-white/40"
+            className="glass-card h-full min-h-[350px] md:min-h-[400px] flex flex-col group bg-black/20 overflow-hidden items-center justify-center text-white/60 hover:text-white/90 transition-colors border-2 border-dotted border-white/20 hover:border-white/40 rounded-xl"
             variants={itemVariants}
             whileHover={{ y: -10, transition: { duration: 0.2 } }}
           > 
