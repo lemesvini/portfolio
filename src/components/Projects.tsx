@@ -155,7 +155,7 @@ const Projects = () => {
             className="glass-card h-full min-h-[400px] flex flex-col group bg-black/20 overflow-hidden items-center justify-center text-white/60 hover:text-white/90 transition-colors border-2 border-dotted border-white/20 hover:border-white/40"
             variants={itemVariants}
             whileHover={{ y: -10, transition: { duration: 0.2 } }}
-          >
+          > 
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="48"

@@ -45,7 +45,7 @@ const Navbar = () => {
 
         <nav className="hidden md:flex items-center gap-4">
           <a href="#home" className="nav-item">
-            Home
+            Home 
           </a>
           <a href="#about" className="nav-item">
             About
