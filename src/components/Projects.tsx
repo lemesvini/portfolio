@@ -41,7 +41,7 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="py-12 md:py-32 glass-card my-10 md:my-20">
+    <section id="projects" className="py-12 md:py-32 my-10 md:my-20">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-10 md:mb-16">
           <motion.h2
@@ -66,7 +66,7 @@ const Projects = () => {
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              className="glass-card h-full min-h-[350px] md:min-h-[400px] flex flex-col group bg-black/40 overflow-hidden rounded-xl"
+              className="h-full min-h-[350px] md:min-h-[400px] flex flex-col group bg-black/40 overflow-hidden rounded-xl border border-white/10"
               variants={itemVariants}
               whileHover={{ y: -10, transition: { duration: 0.2 } }}
             >
@@ -77,7 +77,7 @@ const Projects = () => {
                   className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
-
+              <div className="border-t border-white/10 w-[90%] mx-auto"/> 
               <div className="p-4 md:p-6 flex flex-col flex-grow bg-black/40">
                 <h3 className="text-lg md:text-xl font-bold mb-2 text-white">
                   {project.title}
@@ -152,7 +152,7 @@ const Projects = () => {
             href="https://github.com/lemesvini?tab=repositories"
             target="_blank"
             rel="noopener noreferrer"
-            className="glass-card h-full min-h-[350px] md:min-h-[400px] flex flex-col group bg-black/20 overflow-hidden items-center justify-center text-white/60 hover:text-white/90 transition-colors border-2 border-dotted border-white/20 hover:border-white/40 rounded-xl"
+            className="h-full min-h-[350px] md:min-h-[400px] flex flex-col group bg-black/20 overflow-hidden items-center justify-center text-white/60 hover:text-white/90 transition-colors border border-white/10 rounded-xl"
             variants={itemVariants}
             whileHover={{ y: -10, transition: { duration: 0.2 } }}
           > 
