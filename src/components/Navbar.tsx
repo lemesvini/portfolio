@@ -43,16 +43,19 @@ const Navbar = () => {
           <span className="text-2xl font-bold">lemesvini</span>
         </motion.a>
 
-        <nav className="hidden md:flex items-center gap-6">
+        <nav className="hidden md:flex items-center gap-4">
           <a href="#home" className="nav-item">
             Home
           </a>
           <a href="#about" className="nav-item">
             About
           </a>
-          {/* <a href="#team" className="nav-item">
-            Team
-          </a> */}
+          <a href="#toolkit" className="nav-item">
+            Toolkit
+          </a>
+          <a href="#experience" className="nav-item">
+            Experience
+          </a>
           <a href="#projects" className="nav-item">
             Projects
           </a>
@@ -136,11 +139,18 @@ const Navbar = () => {
               About
             </a>
             <a
-              href="#team"
+              href="#toolkit"
               className="nav-item"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Team
+              Toolkit
+            </a>
+            <a
+              href="#experience"
+              className="nav-item"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Experience
             </a>
             <a
               href="#projects"

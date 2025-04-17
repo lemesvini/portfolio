@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { FaDownload, FaBriefcase, FaInfo, FaInfoCircle } from "react-icons/fa";
-import { SiNextdotjs, SiTypescript, SiReact, SiNodedotjs } from "react-icons/si";
+import { SiNextdotjs, SiJavascript, SiTypescript, SiReact, SiNodedotjs } from "react-icons/si";
 
 const Experience = () => {
   const experiences = [
@@ -9,8 +9,8 @@ const Experience = () => {
       company: "Gama Tecnologia",
       period: "11/2024 - Present",
       technologies: [
-        { name: "Next.js", icon: <SiNextdotjs /> },
-        { name: "TypeScript", icon: <SiTypescript /> },
+        { name: "FullStack", icon: <FaBriefcase /> },
+        { name: "JavaScript", icon: <SiJavascript /> },
         { name: "React", icon: <SiReact /> },
         { name: "Node.js", icon: <SiNodedotjs /> },
       ],
@@ -21,7 +21,7 @@ const Experience = () => {
       ],
     },
     {
-      title: "FullStack Software Developer",
+      title: "Founder, Teacher and FullStack Software Developer",
       company: "Horizon English Group",
       period: "02/2024 - Present",
       technologies: [
@@ -31,7 +31,7 @@ const Experience = () => {
         { name: "Node.js", icon: <SiNodedotjs /> },
       ],
       achievements: [
-        "Building interactive learning platforms",
+        "Creating the whole platform from scratch",
         "Optimizing application performance and user experience",
         "Implementing secure authentication and data management systems",
       ],
