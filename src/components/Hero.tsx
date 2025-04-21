@@ -8,17 +8,9 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen pt-32 pb-20 md:pt-40 md:pb-28 flex items-center overflow-hidden"
+      className="relative min-h-screen md:h-[100dvh] pt-32 pb-20 md:pt-40 md:pb-28 flex items-center overflow-hidden"
     >
       <div className="absolute inset-0 hero-gradient -z-10"></div>
-      <div
-        className="absolute inset-0 -z-10 opacity-30"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle at center, rgba(255,255,255,0.03) 0%, transparent 70%)",
-          backgroundSize: "20px 20px",
-        }}
-      ></div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
@@ -62,7 +54,7 @@ const Hero = () => {
             >
               <motion.a
                 href="#projects"
-                className="px-6 py-3 rounded-full glass border border-white/10 font-medium transition-all hover:bg-white/10"
+                className="px-6 py-3 rounded-full glass border text-center border-white/10 font-medium transition-all hover:bg-white/10"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >

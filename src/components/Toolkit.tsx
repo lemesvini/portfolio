@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJs, FaGitAlt, FaGithub, FaDatabase, FaTabletAlt, FaMicrosoft, FaRobot } from "react-icons/fa";
-import { SiTypescript, SiTailwindcss, SiRedux, SiGraphql, SiSequelize, SiNextdotjs, SiFigma, SiFirebase, SiPostgresql, SiMysql, SiSupabase, SiBlender, SiPostman, SiBootstrap, SiMaterialdesign } from "react-icons/si";
+import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJs, FaGitAlt, FaGithub, FaDatabase, FaTabletAlt, FaMicrosoft, FaRobot, FaPalette } from "react-icons/fa";
+import { SiTypescript, SiTailwindcss, SiRedux, SiGraphql, SiSequelize, SiNextdotjs, SiFigma, SiFirebase, SiPostgresql, SiMysql, SiSupabase, SiBlender, SiPostman, SiBootstrap } from "react-icons/si";
 import { IoLogoReact } from "react-icons/io5";
 
 const Toolkit = () => {
@@ -29,6 +29,7 @@ const Toolkit = () => {
       title: "Front-End",
       skills: [
         { name: "React", icon: <FaReact className="text-blue-500" /> },
+        { name: "React Native", icon: <IoLogoReact className="text-blue-500" /> },
         { name: "Next.js", icon: <SiNextdotjs className="text-black dark:text-white" /> },
         { name: "JavaScript", icon: <FaJs className="text-yellow-500" /> },
         { name: "TypeScript", icon: <SiTypescript className="text-blue-600" /> },
@@ -36,8 +37,7 @@ const Toolkit = () => {
         { name: "CSS", icon: <FaCss3Alt className="text-blue-400" /> },
         { name: "TailwindCSS", icon: <SiTailwindcss className="text-cyan-500" /> },
         { name: "Bootstrap", icon: <SiBootstrap className="text-purple-600" /> },
-        { name: "Shadcn", icon: <SiMaterialdesign className="text-blue-400" /> },
-        { name: "Material UI", icon: <SiMaterialdesign className="text-blue-600" /> },
+        { name: "Shadcn", icon: <FaPalette className="text-blue-400" /> },
       ],
     },
     {
@@ -58,9 +58,9 @@ const Toolkit = () => {
     {
       title: "Others",
       skills: [
-        { name: "React Native", icon: <IoLogoReact className="text-blue-500" /> },
         { name: "Figma", icon: <SiFigma className="text-purple-500" /> },
-        { name: "Procreate", icon: <FaTabletAlt className="text-orange-500" /> },
+        { name: "Procreate", icon: <FaPalette className="text-orange-500" /> },
+        { name: "Clip Studio", icon: <FaTabletAlt className="text-blue-400" /> },
         { name: "Nomad", icon: <FaRobot className="text-blue-400" /> },
         { name: "Blender", icon: <SiBlender className="text-orange-600" /> },
         { name: "Excel Macros", icon: <FaMicrosoft className="text-green-600" /> },
