@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FaDownload, FaBriefcase, FaInfo, FaInfoCircle } from "react-icons/fa";
+import { FaDownload, FaBriefcase, FaInfo, FaInfoCircle, FaDatabase } from "react-icons/fa";
 import { SiNextdotjs, SiJavascript, SiTypescript, SiReact, SiNodedotjs } from "react-icons/si";
 
 const Experience = () => {
@@ -9,10 +9,11 @@ const Experience = () => {
       company: "Gama Tecnologia",
       period: "11/2024 - Present",
       technologies: [
-        { name: "FullStack", icon: <FaBriefcase /> },
         { name: "JavaScript", icon: <SiJavascript /> },
         { name: "React", icon: <SiReact /> },
         { name: "Node.js", icon: <SiNodedotjs /> },
+        { name: "Postgres", icon: <FaDatabase /> },
+        { name: "Rest API", icon: <FaDatabase /> },
       ],
       achievements: [
         "Developing and maintaining enterprise-level applications",
@@ -29,6 +30,7 @@ const Experience = () => {
         { name: "TypeScript", icon: <SiTypescript /> },
         { name: "React", icon: <SiReact /> },
         { name: "Node.js", icon: <SiNodedotjs /> },
+        { name: "Firebase", icon: <FaDatabase /> },
       ],
       achievements: [
         "Creating the whole platform from scratch",

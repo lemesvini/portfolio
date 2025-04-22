@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import devinelogo from "../assets/devine-white.png";
+import lemesvinilogo from "/public/lemesvinilogo.png";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -40,7 +41,18 @@ const Navbar = () => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          <span className="text-2xl font-bold">lemesvini</span>
+          { isScrolled ? (
+            <>
+            <img src={lemesvinilogo} alt="Lemesvini Logo" className="h-8 w-auto  rounded-md " />
+            {/* <span className="text-2xl font-bold">lemesvini</span> */}
+            </> 
+            
+          ) : (
+            <>
+            <img src={lemesvinilogo} alt="Lemesvini Logo" className="h-8 w-auto  rounded-md" />
+            <span className="text-lg font-bold">lemesvini</span>
+            </>
+          )}
         </motion.a>
 
         <nav className="hidden md:flex items-center gap-4">
@@ -87,7 +99,7 @@ const Navbar = () => {
           GitHub
         </motion.a>
 
-        {/* <button className="md:hidden p-2 text-white" onClick={toggleMobileMenu}>
+        <button className="md:hidden p-2 text-white" onClick={toggleMobileMenu}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -112,13 +124,13 @@ const Navbar = () => {
               </>
             )}
           </svg>
-        </button> */}
+        </button>
       </div>
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <motion.div
-          className="md:hidden absolute top-full left-0 right-0 glass"
+          className="md:hidden absolute top-full left-0 right-0 bg-black"
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}

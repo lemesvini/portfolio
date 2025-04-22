@@ -92,7 +92,7 @@ const Hero = () => {
           </div>
 
           <motion.div
-            className="relative w-full max-w-[500px] h-[400px] sm:h-[450px] md:h-[500px] bg-black/20 rounded-lg overflow-hidden border border-white/10 mx-auto"
+            className="relative w-full max-w-[500px] h-[400px] sm:h-[360px] md:h-[400px] bg-black/20 rounded-lg overflow-hidden border border-white/10 mx-auto"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
@@ -137,10 +137,16 @@ const Hero = () => {
       </div>
 
       <motion.div
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
+        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 cursor-pointer"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 1 }}
+        onClick={() => {
+          window.scrollTo({
+            top: window.innerHeight,
+            behavior: 'smooth'
+          });
+        }}
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}
