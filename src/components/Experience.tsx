@@ -5,9 +5,26 @@ import { SiNextdotjs, SiJavascript, SiTypescript, SiReact, SiNodedotjs } from "r
 const Experience = () => {
   const experiences = [
     {
+      title: "Frontend Developer",
+      company: "Epicora Software House",
+      period: "05/2025 - Present",
+      technologies: [
+        { name: "TypeScript", icon: <SiTypescript /> },
+        { name: "React", icon: <SiReact /> },
+        { name: "Next.js", icon: <SiNextdotjs /> },
+        { name: "Tailwind CSS", icon: <FaDatabase /> },
+        { name: "Rest API", icon: <FaDatabase /> },
+      ],
+      achievements: [
+        "Developing and maintaining enterprise-level applications",
+        "Implementing responsive and accessible user interfaces",
+        "Collaborating with cross-functional teams to deliver high-quality solutions",
+      ],
+    },
+    {
       title: "Junior FullStack Software Developer",
       company: "Gama Tecnologia",
-      period: "11/2024 - Present",
+      period: "11/2024 - 05/2025",
       technologies: [
         { name: "JavaScript", icon: <SiJavascript /> },
         { name: "React", icon: <SiReact /> },
