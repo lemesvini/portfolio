@@ -1,58 +1,98 @@
 import { motion } from "framer-motion";
-import { FaDownload, FaBriefcase, FaInfo, FaInfoCircle, FaDatabase } from "react-icons/fa";
-import { SiNextdotjs, SiJavascript, SiTypescript, SiReact, SiNodedotjs } from "react-icons/si";
+import { FaBriefcase, FaInfoCircle, FaDatabase, FaFileExcel, FaChalkboardTeacher } from "react-icons/fa";
+import {
+  SiNextdotjs,
+  SiTypescript,
+  SiReact,
+  SiExpo,
+  SiTailwindcss,
+  SiReactquery,
+  SiRxdb,
+  SiSqlite,
+  SiGraphql,
+  SiExpress,
+  SiPostgresql,
+  SiSupabase,
+  SiFirebase,
+} from "react-icons/si";
 
 const Experience = () => {
   const experiences = [
     {
-      title: "Frontend Developer",
-      company: "Epicora Software House",
-      period: "05/2025 - Present",
+      title: "Desenvolvedor FullStack (Pleno)",
+      company: "Epicora",
+      period: "04/2025 - Presente",
       technologies: [
-        { name: "TypeScript", icon: <SiTypescript /> },
         { name: "React", icon: <SiReact /> },
-        { name: "Next.js", icon: <SiNextdotjs /> },
-        { name: "Tailwind CSS", icon: <FaDatabase /> },
-        { name: "Rest API", icon: <FaDatabase /> },
+        { name: "React Native (Expo)", icon: <SiExpo /> },
+        { name: "TypeScript", icon: <SiTypescript /> },
+        { name: "Tailwind", icon: <SiTailwindcss /> },
+        { name: "Tanstack", icon: <SiReactquery /> },
+        { name: "RxDB", icon: <SiRxdb /> },
+        { name: "SQLite", icon: <SiSqlite /> },
       ],
       achievements: [
-        "Developing and maintaining enterprise-level applications",
-        "Implementing responsive and accessible user interfaces",
-        "Collaborating with cross-functional teams to deliver high-quality solutions",
+        "Estruturação e desenvolvimento de aplicações web responsivas",
+        "Responsável pelo desenvolvimento mobile com Expo e React Native",
+        "Criação do aplicativo base Genesis, usado como ponto de partida de novos projetos, com features local-first (offline) e design focado em componentização e replicação",
       ],
     },
     {
-      title: "Junior FullStack Software Developer",
-      company: "Gama Tecnologia",
-      period: "11/2024 - 05/2025",
+      title: "Desenvolvedor FullStack (Júnior)",
+      company: "Gamatec",
+      period: "11/2024 - 04/2025",
       technologies: [
-        { name: "JavaScript", icon: <SiJavascript /> },
         { name: "React", icon: <SiReact /> },
-        { name: "Node.js", icon: <SiNodedotjs /> },
-        { name: "Postgres", icon: <FaDatabase /> },
-        { name: "Rest API", icon: <FaDatabase /> },
+        { name: "React Native", icon: <SiReact /> },
+        { name: "TypeScript", icon: <SiTypescript /> },
+        { name: "GraphQL", icon: <SiGraphql /> },
+        { name: "Express", icon: <SiExpress /> },
+        { name: "PostgreSQL", icon: <SiPostgresql /> },
       ],
       achievements: [
-        "Developing and maintaining enterprise-level applications",
-        "Implementing responsive and accessible user interfaces",
-        "Collaborating with cross-functional teams to deliver high-quality solutions",
+        "Desenvolvimento de aplicações web responsivas com React e TypeScript",
+        "Desenvolvimento de soluções web e mobile sob demanda para clientes corporativos",
       ],
     },
     {
-      title: "Founder, Teacher and FullStack Software Developer",
-      company: "Horizon English Group",
-      period: "02/2024 - Present",
+      title: "Sócio Proprietário",
+      company: "Horizon English",
+      period: "01/2024 - 12/2025",
       technologies: [
-        { name: "Next.js", icon: <SiNextdotjs /> },
+        { name: "React (Next.js)", icon: <SiNextdotjs /> },
         { name: "TypeScript", icon: <SiTypescript /> },
-        { name: "React", icon: <SiReact /> },
-        { name: "Node.js", icon: <SiNodedotjs /> },
-        { name: "Firebase", icon: <FaDatabase /> },
+        { name: "Supabase", icon: <SiSupabase /> },
+        { name: "Firebase", icon: <SiFirebase /> },
+        { name: "PostgreSQL", icon: <SiPostgresql /> },
       ],
       achievements: [
-        "Creating the whole platform from scratch",
-        "Optimizing application performance and user experience",
-        "Implementing secure authentication and data management systems",
+        "Atuação como desenvolvedor full-stack, professor e responsável pela criação do material didático próprio, integrado nos sistemas web dos professores associados e dos alunos",
+        "Foco em desenvolvimento web responsivo de plataforma de ensino, com dezenas de usuários ativos durante a atuação",
+      ],
+    },
+    {
+      title: "Professor de Inglês e Espanhol e Coordenador Pedagógico",
+      company: "",
+      period: "01/2020 - 12/2025",
+      technologies: [
+        { name: "Gestão de equipes", icon: <FaChalkboardTeacher /> },
+      ],
+      achievements: [
+        "Desenvolvimento de habilidades de comunicação em múltiplas línguas",
+        "Experiência como gestor de equipes, responsável por processos seletivos, treinamentos e coordenação de alunos e processos internos",
+      ],
+    },
+    {
+      title: "Jovem Aprendiz, Estagiário e Assistente de Controladoria",
+      company: "Sicoob MaxiCrédito",
+      period: "01/2017 - 01/2020",
+      technologies: [
+        { name: "Excel", icon: <FaFileExcel /> },
+        { name: "Visual Basic", icon: <FaDatabase /> },
+      ],
+      achievements: [
+        "Otimização de processos internos usando macros do Excel e desenvolvimento de aplicações em Visual Basic dentro do próprio Excel",
+        "Adaptação de features com foco na redução estratégica de processos de conferência, auditoria e arquivamento",
       ],
     },
   ];
@@ -62,10 +102,10 @@ const Experience = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Experience
+            Experiências
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            My professional journey in software development
+            Uma parte da minha trajetória profissional
           </p>
         </div>
 
@@ -87,11 +127,13 @@ const Experience = () => {
                 }`}>
                   <div className="bg-background border rounded-lg p-6">
                     <h3 className="text-xl font-bold mb-1">{experience.title}</h3>
-                    <p className="text-primary mb-1">{experience.company}</p>
+                    {experience.company && (
+                      <p className="text-primary mb-1">{experience.company}</p>
+                    )}
                     <p className="text-muted-foreground text-sm mb-4">{experience.period}</p>
 
                     <div className="mb-4">
-                      <h4 className="text-sm font-medium mb-2">Technologies</h4>
+                      <h4 className="text-sm font-medium mb-2">Stack</h4>
                       <div className="flex flex-wrap gap-2">
                         {experience.technologies.map((tech, techIndex) => (
                           <span
@@ -106,7 +148,7 @@ const Experience = () => {
                     </div>
 
                     <div>
-                      <h4 className="text-sm font-medium mb-2">Key Achievements</h4>
+                      <h4 className="text-sm font-medium mb-2">Principais atividades</h4>
                       <ul className="space-y-2">
                         {experience.achievements.map((achievement, achievementIndex) => (
                           <li key={achievementIndex} className="flex items-start gap-2 text-sm text-muted-foreground">
@@ -124,9 +166,9 @@ const Experience = () => {
         </div>
 
         <div className="mt-20 text-center">
-          <button onClick={() => window.open('https://www.linkedin.com/in/vinicius-lemes-ds/', '_blank')} className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-background border hover:bg-accent transition-colors">
+          <button onClick={() => window.open('https://www.linkedin.com/in/lemessvini/', '_blank')} className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-background border hover:bg-accent transition-colors">
             <FaInfoCircle className="w-4 h-4" />
-            <span>For more information, check my LinkedIn</span>
+            <span>Para mais informações, veja meu LinkedIn</span>
           </button>
         </div>
       </div>

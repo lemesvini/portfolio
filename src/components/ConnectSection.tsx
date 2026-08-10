@@ -7,9 +7,9 @@ const ConnectSection: React.FC = () => {
       <div className="container mx-auto px-4 flex flex-col lg:flex-row gap-12 max-w-6xl">
         {/* Left side - Contact Information */}
         <div className="flex-1">
-          <h2 className="text-4xl font-semibold mb-4">Let's connect</h2>
+          <h2 className="text-4xl font-semibold mb-4">Vamos conversar?</h2>
           <p className="text-gray-400 mb-8">
-            I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+            Estou sempre aberto para discutir novos projetos, ideias criativas ou oportunidades de fazer parte da sua visão.
           </p>
           
           <div className="space-y-6">
@@ -42,7 +42,7 @@ const ConnectSection: React.FC = () => {
             </a>
 
             <a 
-              href="https://www.linkedin.com/in/vinicius-lemes-ds/" 
+              href="https://www.linkedin.com/in/lemessvini/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="flex items-center gap-4 text-gray-400 hover:text-white transition-colors group"
@@ -52,7 +52,7 @@ const ConnectSection: React.FC = () => {
               </div>
               <div className="flex flex-col">
                 <span className="text-sm text-gray-500">LinkedIn</span>
-                <span className="text-base">linkedin.com/in/vinicius-lemes-ds</span>
+                <span className="text-base">linkedin.com/in/lemessvini</span>
               </div>
             </a>
           </div>
@@ -66,10 +66,10 @@ const ConnectSection: React.FC = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-4l-4 4-4-4z" />
               </svg>
             </div>
-            <h3 className="text-2xl font-semibold mb-4">Let's Create Something Amazing</h3>
+            <h3 className="text-2xl font-semibold mb-4">Entre em contato :)</h3>
             <div className="flex gap-4">
-              <span className="px-4 py-2 bg-[#333] rounded-full text-sm">⌨️ Code</span>
-              <span className="px-4 py-2 bg-[#333] rounded-full text-sm">🎨 Design</span>
+              {/* <span className="px-4 py-2 bg-[#333] rounded-full text-sm">⌨️ Code</span> */}
+              {/* <span className="px-4 py-2 bg-[#333] rounded-full text-sm">🎨 Design</span> */}
             </div>
           </div>
         </div>

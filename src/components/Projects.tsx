@@ -1,29 +1,133 @@
 import { motion } from "framer-motion";
-import { useRef } from "react";
+import type { ReactNode } from "react";
+import { ArrowUpRight, Lock } from "lucide-react";
+import { FaApple, FaGithub, FaGooglePlay } from "react-icons/fa";
+import {
+  SiExpo,
+  SiMapbox,
+  SiReact,
+  SiRxdb,
+  SiSqlite,
+  SiSupabase,
+  SiVite,
+} from "react-icons/si";
+
+type Availability = "store" | "testflight" | "production";
+
+type Project = {
+  title: string;
+  subtitle: string;
+  description: string;
+  icon: string;
+  /** Tile color behind the icon — matches each logo's own background so the squircle mask blends seamlessly. */
+  iconBg: string;
+  /** Logos delivered as a bare glyph on transparency need padding; full-bleed tiles do not. */
+  iconPadded?: boolean;
+  availability: Availability;
+  tags: { name: string; icon: ReactNode }[];
+  links: { label: string; href: string; icon: ReactNode }[];
+  featured?: boolean;
+};
+
+const availabilityMeta: Record<Availability, { label: string; dot: string }> = {
+  store: { label: "Publicado nas lojas", dot: "bg-emerald-400" },
+  testflight: { label: "Beta · TestFlight", dot: "bg-amber-400" },
+  production: { label: "Em produção", dot: "bg-emerald-400" },
+};
 
 const Projects = () => {
-  const projectsRef = useRef(null);
-
-  const projects = [
+  const projects: Project[] = [
     {
-      title: "Horizon English Group",
+      title: "Epicora Genesis",
+      subtitle: "App base da Epicora",
       description:
-        "Teacher and Student platform for online classes. Login, class records and income manager, as well as stripe integrated functionalities for subscription.",
-      tags: ["Next.js", "TypeScript", "Stripe"],
-      logo: "/horizonfavicon.png",
-      screenshot: "/horizonenglishgroup.com_.png",
-      github: "https://github.com/lemesvini/horizon2",
-      website: "https://horizonenglishgroup.com"
+        "Aplicativo base da Epicora, usado como ponto de partida para novos aplicativos. Conta com as últimas features do Expo 56 e componentização pensada para replicação, além de lógica offline e uso estável de Liquid Glass no iOS.",
+      icon: "/epicora.png",
+      iconBg: "bg-[#6100FF]",
+      availability: "testflight",
+      tags: [
+        { name: "Expo 56", icon: <SiExpo /> },
+        { name: "RxDB", icon: <SiRxdb /> },
+        { name: "SQLite", icon: <SiSqlite /> },
+        { name: "Reanimated", icon: <SiReact /> },
+      ],
+      links: [],
+      featured: true,
     },
     {
-      title: "Junior",
+      title: "Reticar",
+      subtitle: "Vendas e ordens de serviço",
       description:
-        "JSON Parser, code editor with file support and realtime collaborative coding with sessions.",
-      tags: ["TypeScript", "Monaco Editor", "WebSockets"],
-      logo: "/juniorfavicon.png",
-      screenshot: "/lemesvini.github.io_junior_.png",
-      github: "https://github.com/lemesvini/junior",
-      website: "https://lemesvini.github.io/junior"
+        "Aplicativo de uso interno dos vendedores e sistema web de gerenciamento da Reticar Retífica de Motores, com features offline e sincronização de novos registros, controle de ordens de serviço, clientes e peças para manutenção e vendas.",
+      icon: "/reticar-icon.png",
+      iconBg: "bg-[#F6E911]",
+      availability: "store",
+      tags: [
+        { name: "Expo 55", icon: <SiExpo /> },
+        { name: "RxDB", icon: <SiRxdb /> },
+        { name: "SQLite", icon: <SiSqlite /> },
+        { name: "Reanimated", icon: <SiReact /> },
+        { name: "Mapbox", icon: <SiMapbox /> },
+      ],
+      links: [
+        {
+          label: "App Store",
+          href: "https://apps.apple.com/us/app/reticar-ret%C3%ADfica-de-motores/id6756629022",
+          icon: <FaApple />,
+        },
+        {
+          label: "Google Play",
+          href: "https://play.google.com/store/apps/details?id=com.pedrohhcunha.reticar",
+          icon: <FaGooglePlay />,
+        },
+      ],
+    },
+    {
+      title: "Epicora Hercules",
+      subtitle: "Consultoria esportiva",
+      description:
+        "Aplicativo de consultoria esportiva para atletas, com controle offline de treinos e dietas, comunidade, gamificação e chat com IA. Construído a partir do Genesis.",
+      icon: "/epicora.png",
+      iconBg: "bg-[#6100FF]",
+      availability: "testflight",
+      tags: [
+        { name: "Expo 56", icon: <SiExpo /> },
+        { name: "RxDB", icon: <SiRxdb /> },
+        { name: "SQLite", icon: <SiSqlite /> },
+        { name: "Reanimated", icon: <SiReact /> },
+      ],
+      links: [],
+    },
+    {
+      title: "Mapin",
+      subtitle: "Mapa social de registros",
+      description:
+        "Aplicativo de portfólio que conta com registros no mapa em forma de pins, timeline, likes e comentários.",
+      icon: "/mapin-logo.png",
+      iconBg: "bg-white",
+      iconPadded: true,
+      availability: "testflight",
+      tags: [
+        { name: "Expo 56", icon: <SiExpo /> },
+        { name: "Mapbox", icon: <SiMapbox /> },
+        { name: "Supabase", icon: <SiSupabase /> },
+      ],
+      links: [],
+    },
+    {
+      title: "Lexicon English",
+      subtitle: "Plataforma de ensino de inglês",
+      description:
+        "Plataforma de aulas particulares de inglês com gerenciamento de alunos, controle de agenda e monitoramento financeiro, além da plataforma do aluno com acesso ao material didático e conteúdos personalizados.",
+      icon: "/lex.png",
+      iconBg: "bg-[#14352A]",
+      availability: "production",
+      tags: [
+        { name: "Vite", icon: <SiVite /> },
+        { name: "Supabase", icon: <SiSupabase /> },
+        { name: "Expo", icon: <SiExpo /> },
+      ],
+      links: [],
     },
   ];
 
@@ -31,192 +135,177 @@ const Projects = () => {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
+      transition: { staggerChildren: 0.08 },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+    hidden: { opacity: 0, y: 24 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as const },
+    },
   };
 
   return (
-    <section id="projects" className="py-12 md:py-6 my-10 md:my-20">
+    <section id="projects" className="py-20 md:py-32">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center mb-10 md:mb-16">
+        <div className="text-center mb-16">
           <motion.h2
-            className="text-3xl md:text-4xl font-bold mb-4 heading-gradient"
+            className="text-3xl md:text-4xl font-bold mb-4 tracking-tight"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            Pinned Projects
+            Projetos
           </motion.h2>
+          <motion.p
+            className="text-lg text-muted-foreground max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            Aplicativos e plataformas que projetei, desenvolvi e publiquei
+          </motion.p>
         </div>
 
         <motion.div
-          ref={projectsRef}
-          className="flex flex-col gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 max-w-5xl mx-auto"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.1 }}
         >
-          {projects.map((project, index) => (
-            <motion.div
-              key={index}
-              className="group bg-black/40 overflow-hidden rounded-xl border border-white/10 hover:border-white/20 transition-all p-6 md:p-8"
+          {projects.map((project) => (
+            <motion.article
+              key={project.title}
+              className={`relative flex flex-col overflow-hidden rounded-[28px] border border-white/[0.08] bg-gradient-to-b from-white/[0.055] to-white/[0.02] p-6 md:p-8 shadow-xl shadow-black/20 ${
+                project.featured ? "md:col-span-2" : ""
+              }`}
               variants={itemVariants}
             >
-              <div className="flex flex-col md:flex-row gap-6 md:gap-8">
-                {/* Screenshot Section */}
-                <div className="w-full md:w-[45%] bg-black/20 rounded-lg overflow-hidden border border-white/10 relative group">
-                  <div className="relative pt-[56.25%] overflow-hidden">
-                    <img
-                      src={project.screenshot}
-                      alt={project.title}
-                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 text-white transition-colors"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="18"
-                          height="18"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
-                          <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
-                          <path d="M9 18c-4.51 2-5-2-7-2"></path>
-                        </svg>
-                        View on GitHub
-                      </a>
-                    </div>
-                  </div>
-                </div>
+              {/* Top hairline highlight */}
+              <div className="pointer-events-none absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-white/25 to-transparent" />
 
-                {/* Content Section */}
-                <div className="w-full md:w-[55%] flex flex-col">
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-12 h-12 rounded-lg overflow-hidden flex items-center justify-center">
-                      <img
-                        src={project.logo}
-                        alt={`${project.title} logo`}
-                        className="w-full h-full object-contain"
-                      />
-                    </div>
-                    <h3 className="text-xl md:text-2xl font-bold text-white">
+              <div className="relative flex flex-col h-full">
+                <div className="flex items-start gap-4 md:gap-5">
+                  {/* iOS-style app icon */}
+                  <div
+                    className={`relative shrink-0 overflow-hidden rounded-[22%] shadow-lg shadow-black/40 ring-1 ring-inset ring-white/10 ${
+                      project.iconBg
+                    } ${
+                      project.featured ? "h-16 w-16 md:h-20 md:w-20" : "h-14 w-14"
+                    }`}
+                  >
+                    <img
+                      src={project.icon}
+                      alt=""
+                      loading="lazy"
+                      className={`h-full w-full ${
+                        project.iconPadded ? "object-contain p-[16%]" : "object-cover"
+                      }`}
+                    />
+                  </div>
+
+                  <div className="min-w-0 flex-1">
+                    <h3
+                      className={`font-semibold tracking-tight text-white ${
+                        project.featured ? "text-2xl md:text-3xl" : "text-xl"
+                      }`}
+                    >
                       {project.title}
                     </h3>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      {project.subtitle}
+                    </p>
                   </div>
 
-                  <p className="text-base text-white/80 mb-6 flex-grow">
-                    {project.description}
-                  </p>
+                  <span className="hidden sm:inline-flex shrink-0 items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-medium text-white/70">
+                    <span
+                      className={`h-1.5 w-1.5 rounded-full ${
+                        availabilityMeta[project.availability].dot
+                      }`}
+                    />
+                    {availabilityMeta[project.availability].label}
+                  </span>
+                </div>
 
-                  <div className="space-y-6">
-                    <div className="flex flex-wrap gap-2">
-                      {project.tags.map((tag, tagIndex) => (
-                        <span
-                          key={tagIndex}
-                          className="px-3 py-1 text-sm font-medium rounded-full bg-white/10 text-white"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
+                <p
+                  className={`mt-5 text-[15px] leading-relaxed text-muted-foreground ${
+                    project.featured ? "md:max-w-3xl" : ""
+                  }`}
+                >
+                  {project.description}
+                </p>
 
-                    <div className="flex gap-4">
-                      <a
-                        href={project.github}
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag.name}
+                      className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1 text-xs font-medium text-white/60"
+                    >
+                      <span className="text-[13px]">{tag.icon}</span>
+                      {tag.name}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="mt-auto flex flex-wrap items-center gap-3 pt-6">
+                  {project.links.length > 0 ? (
+                    project.links.map((link) => (
+                      <motion.a
+                        key={link.label}
+                        href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 hover:bg-white/10 text-white/90 hover:text-white transition-colors"
+                        className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-black"
+                        whileTap={{ scale: 0.96 }}
                       >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="18"
-                          height="18"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
-                          <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
-                          <path d="M9 18c-4.51 2-5-2-7-2"></path>
-                        </svg>
-                        GitHub
-                      </a>
-                      <a
-                        href={project.website}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 hover:bg-white/10 text-white/90 hover:text-white transition-colors"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="18"
-                          height="18"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
-                          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                          <polyline points="15 3 21 3 21 9"></polyline>
-                          <line x1="10" y1="14" x2="21" y2="3"></line>
-                        </svg>
-                        Website
-                      </a>
-                    </div>
-                  </div>
+                        <span className="text-base">{link.icon}</span>
+                        {link.label}
+                      </motion.a>
+                    ))
+                  ) : (
+                    <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm font-medium text-white/50">
+                      {project.availability === "testflight" ? (
+                        <>
+                          <FaApple className="text-base" />
+                          Distribuição interna via TestFlight
+                        </>
+                      ) : (
+                        <>
+                          <Lock className="h-3.5 w-3.5" />
+                          Acesso restrito a alunos e professores
+                        </>
+                      )}
+                    </span>
+                  )}
                 </div>
               </div>
-            </motion.div>
+            </motion.article>
           ))}
+        </motion.div>
 
-          <motion.a
+        <motion.div
+          className="mt-12 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <a
             href="https://github.com/lemesvini?tab=repositories"
             target="_blank"
             rel="noopener noreferrer"
-            className="group bg-black/20 overflow-hidden rounded-xl border border-white/10 hover:border-white/20 transition-all p-8 flex items-center justify-center gap-4"
-            variants={itemVariants}
+            className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-6 py-3 text-sm font-medium text-white/70"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="32"
-              height="32"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="text-white/60 group-hover:text-white/90 transition-colors"
-            >
-              <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
-              <path d="M9 18c-4.51 2-5-2-7-2"></path>
-            </svg>
-            <span className="text-xl font-medium text-white/60 group-hover:text-white/90 transition-colors">
-              See All Projects
-            </span>
-          </motion.a>
+            <FaGithub className="text-base" />
+            Ver todos os repositórios no GitHub
+            <ArrowUpRight className="h-4 w-4" />
+          </a>
         </motion.div>
       </div>
     </section>

@@ -29,7 +29,7 @@ const Index = () => {
   }, []);
   
   return (
-    <div className="min-h-screen text-white">
+    <div className="flex flex-col min-h-screen text-white">
       <Navbar />
       <Hero />
       <About />

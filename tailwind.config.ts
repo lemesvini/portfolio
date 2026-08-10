@@ -21,6 +21,7 @@ export default {
 		extend: {
 			fontFamily: {
 				sans: ['Satoshi', 'sans-serif'],
+				display: ['Caprasimo', 'cursive'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',

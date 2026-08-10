@@ -32,7 +32,7 @@ const About = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5 }}
                 >
-                  About Me
+                  Sobre
                 </motion.h2>
 
                 <motion.p
@@ -42,8 +42,9 @@ const About = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.1 }}
                 >
-                  Based in Brazil, I'm a 22 year old developer with over two years of experience. 
-                  I specialize in pixel perfect responsive designs and problem solving with creativity and innovation.
+                  Desenvolvedor full-stack Web e Mobile, com foco atual em React Native/Expo e
+React/Next.js e mais de 3 anos trabalhando na área. Experiência em idealização,
+arquitetura, desenvolvimento, design e publicação de sites e aplicativos.
                 </motion.p>
 
                 <motion.p
@@ -53,8 +54,10 @@ const About = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.2 }}
                 >
-                  I believe in writing clean, maintainable code and creating intuitive user experiences. 
-                  My focus is on building scalable applications while keeping up with the latest technologies and best practices.
+                  Atualmente, desenvolvo com foco em front-end mobile e gerenciamento de todo o
+ciclo de vida dos aplicativos, bem como revisões de código de projetos Expo.
+Possuo também experiências em outras áreas que fortalecem minha comunicação,
+trabalho em equipe, foco em resultados e otimização de processos.
                 </motion.p>
               </div>
             </div>
