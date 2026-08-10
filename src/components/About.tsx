@@ -56,8 +56,6 @@ arquitetura, desenvolvimento, design e publicação de sites e aplicativos.
                 >
                   Atualmente, desenvolvo com foco em front-end mobile e gerenciamento de todo o
 ciclo de vida dos aplicativos, bem como revisões de código de projetos Expo.
-Possuo também experiências em outras áreas que fortalecem minha comunicação,
-trabalho em equipe, foco em resultados e otimização de processos.
                 </motion.p>
               </div>
             </div>
